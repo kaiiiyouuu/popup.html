@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Welcome</title>
+    <style>
+        body {
+            font-family: 'Quattrocento', serif;
+            background-color: #183153;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(24, 49, 83, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .popup-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .close-button {
+            background: white;
+            color: black;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="popup" class="popup-overlay">
+        <div class="popup-box">
+            <h2>Welcome!</h2>
+            <button class="close-button" onclick="document.getElementById('popup').style.display='none'">Close</button>
+        </div>
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'flex';
+        }, 3000);
+    </script>
+</body>
+</html>
